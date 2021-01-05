@@ -117,16 +117,7 @@ impl<'a> ClientBuilder<'a> {
     /// Sets a token for the bot. If the token is not prefixed "Bot ",
     /// this method will automatically do so.
     pub fn token(mut self, token: impl AsRef<str>) -> Self {
-        let token = token.as_ref().trim();
-
-        let token = if token.starts_with("Bot ") {
-            token.to_string()
-        } else {
-            format!("Bot {}", token)
-        };
-
-        self.http = Some(Http::new_with_token(&token));
-
+        self.http = Some(Http::new_with_token(token.as_ref().trim()));
         self
     }
 
