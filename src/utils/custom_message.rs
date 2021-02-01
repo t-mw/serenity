@@ -264,7 +264,6 @@ fn dummy_message() -> Message {
         webhook_id: None,
         timestamp: Utc::now(),
         activity: None,
-        application: None,
         message_reference: None,
         flags: None,
         stickers: Vec::new(),

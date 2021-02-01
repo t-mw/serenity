@@ -101,8 +101,6 @@ pub struct Message {
     pub webhook_id: Option<WebhookId>,
     /// Sent with Rich Presence-related chat embeds.
     pub activity: Option<MessageActivity>,
-    /// Sent with Rich Presence-related chat embeds.
-    pub application: Option<MessageApplication>,
     /// Reference data sent with crossposted messages.
     pub message_reference: Option<MessageReference>,
     /// Bit flags describing extra features of the message.
