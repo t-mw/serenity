@@ -1176,6 +1176,11 @@ impl CacheUpdate for ReadyEvent {
                     cache.unavailable_guilds.write().await.insert(unavailable.id);
                 },
                 GuildStatus::OnlineGuild(guild) => {
+                    cache
+                        .channels
+                        .write()
+                        .await
+                        .extend(guild.channels.clone().into_iter());
                     cache.unavailable_guilds.write().await.remove(&guild.id);
                     cache.guilds.write().await.insert(guild.id, guild);
                 },
